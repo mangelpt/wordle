@@ -8,7 +8,6 @@ import {
     WordingContainer
 } from "./styled.ts";
 import {WordsCard} from "../../Components/wordsCard";
-import {Keyboard} from "../../Keyboard";
 
 export const Instructions = () => {
     return <Container>
@@ -69,7 +68,6 @@ export const Instructions = () => {
                 ¡Una palabra nueva cada 5 minutos!
             </Wording>
         </WordingContainer>
-<Keyboard/>
         <Button>!JUGAR¡</Button>
     </Container>
 }

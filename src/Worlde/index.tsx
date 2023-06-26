@@ -9,8 +9,8 @@ export const WorldLayout = () => {
 
     return(
         <Routes>
-            <Route path={GameRoute.game.instructions} element={<Instructions />} />
             <Route path={GameRoute.game.play} element={<Game />} />
+            <Route path={GameRoute.game.instructions} element={<Instructions />} />
         </Routes>
     )
 

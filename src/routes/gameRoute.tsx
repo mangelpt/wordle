@@ -1,6 +1,6 @@
 export const GameRoute = {
     game: {
-        play: "/play",
-        instructions: "/",
+        play: "/",
+        instructions: "/instructions",
     },
 }
