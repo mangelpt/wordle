@@ -10,7 +10,7 @@ import {
 import {WordsCard} from "../../Components/wordsCard";
 
 export const Instructions = () => {
-    return <Container>
+    return (<Container>
         <Title>Cómo jugar</Title>
         <DescriptionContainer>
             <Wording>
@@ -28,31 +28,31 @@ export const Instructions = () => {
             Ejemplos
         </Wording>
         <WordCardContainer>
-            <WordsCard correct={true}>G</WordsCard>
-            <WordsCard>A</WordsCard>
-            <WordsCard>T</WordsCard>
-            <WordsCard>O</WordsCard>
-            <WordsCard>S</WordsCard>
+            <WordsCard border={true} correct={true}>G</WordsCard>
+            <WordsCard border={true}>A</WordsCard>
+            <WordsCard border={true}>T</WordsCard>
+            <WordsCard border={true}>O</WordsCard>
+            <WordsCard border={true}>S</WordsCard>
         </WordCardContainer>
         <Wording>
             La letra <b>G</b> está en la palabra y en la posición correcta.
         </Wording>
         <WordCardContainer>
-            <WordsCard>V</WordsCard>
-            <WordsCard>O</WordsCard>
+            <WordsCard border={true}>V</WordsCard>
+            <WordsCard border={true}>O</WordsCard>
             <WordsCard incorrect={true}>C</WordsCard>
-            <WordsCard>A</WordsCard>
-            <WordsCard>L</WordsCard>
+            <WordsCard border={true}>A</WordsCard>
+            <WordsCard border={true}>L</WordsCard>
         </WordCardContainer>
         <Wording>
             La letra <b>C</b> está en la palabra pero en la posición incorrecta.
         </Wording>
         <WordCardContainer>
-            <WordsCard>C</WordsCard>
-            <WordsCard>A</WordsCard>
-            <WordsCard>N</WordsCard>
-            <WordsCard>T</WordsCard>
-            <WordsCard empty={true}>O</WordsCard>
+            <WordsCard border={true}>C</WordsCard>
+            <WordsCard border={true}>A</WordsCard>
+            <WordsCard border={true}>N</WordsCard>
+            <WordsCard border={true}>T</WordsCard>
+            <WordsCard border={true} empty={true}>O</WordsCard>
         </WordCardContainer>
         <Wording>
             La letra <b>O</b> no está en la palabra.
@@ -69,6 +69,6 @@ export const Instructions = () => {
             </Wording>
         </WordingContainer>
         <Button>!JUGAR¡</Button>
-    </Container>
+    </Container>)
 }
 

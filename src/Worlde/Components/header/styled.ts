@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: #6AAA64;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 15px;
+  background: var(--background1);
+  padding: 0 10px;
 `;
 
 export const CustomButton = styled.button`
@@ -28,7 +30,6 @@ export const Title = styled.span`
 
 
 export const ButtonsContainer = styled.div`
-  background-color: darkorange;
   display: flex;
   align-items: center;
 `;

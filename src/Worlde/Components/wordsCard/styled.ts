@@ -7,7 +7,7 @@ export const Container = styled.div<CardProps>`
   flex-shrink: 0;
   border-radius: 5px;
   text-rendering: optimizeLegibility;
-  border: 1px solid var(--black);
+  border: ${({border}) => border ? "1px solid var(--black)" : "none"};
   display: flex;
   justify-content: center;
   align-items: center;

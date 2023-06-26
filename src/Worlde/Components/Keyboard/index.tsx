@@ -1,12 +1,12 @@
 import  {useEffect} from "react";
+import {ButtonCustom, Container} from "./styled.ts";
 
 export const Keyboard = () => {
     const keys: string[] = [
         'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
         'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
-        'Z', 'X', 'C', 'V', 'B', 'N', 'M'
+        'ENTER','Z', 'X', 'C', 'V', 'B', 'N', 'M' ,'⬅️'
     ];
-
 
     useEffect(() => {
         window.addEventListener("keydown", handleKeyDown);
@@ -24,13 +24,13 @@ export const Keyboard = () => {
     };
 
     return (
-        <div>
+        <Container>
             {keys.map((key) => (
-                <button tabIndex={0} key={key} onClick={() => handleKeyDown(key)}>
+                <ButtonCustom tabIndex={0} key={key} onClick={() => handleKeyDown(key)}>
                     {key}
-                </button>
+                </ButtonCustom>
             ))}
-        </div>
+        </Container>
     );
 };
 

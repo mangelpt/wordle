@@ -72,7 +72,7 @@ export const Button = styled.button`
   justify-content: center;
   flex-shrink: 0;
   align-items: center;
-  margin: 40px auto 0;
+  margin: 40px auto 0 ;
   background-color: var(--green);
  outline: none;
   border: none;

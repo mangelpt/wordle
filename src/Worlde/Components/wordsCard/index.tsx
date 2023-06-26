@@ -6,9 +6,13 @@ interface Props extends CardProps {
     children: React.ReactNode
 }
 
-export const WordsCard = ({children, correct, incorrect, empty}: Props) => {
+export const WordsCard = ({children, correct, incorrect, empty, border}: Props) => {
 
-    return <Container correct={correct} empty={empty} incorrect={incorrect}>
+    return <Container
+        border={border}
+        correct={correct}
+        empty={empty}
+        incorrect={incorrect}>
         {children}
     </Container>
 }
