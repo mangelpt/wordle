@@ -18,9 +18,11 @@ import {UserPreferencesContext} from "../../context/userPreferencesContext.ts";
 
 interface InstructionsProps {
     handleShowModalStats: React.Dispatch<React.SetStateAction<boolean>>
+    remainingTime: string;
+    currentWord: string;
 }
 
-export const Stats = ({handleShowModalStats}: InstructionsProps) => {
+export const Stats = ({handleShowModalStats, remainingTime,currentWord}: InstructionsProps) => {
     const {ThemeContextType} = useContext(UserPreferencesContext)
     const handleOnClick = () => {
         handleShowModalStats(false)
@@ -39,11 +41,15 @@ export const Stats = ({handleShowModalStats}: InstructionsProps) => {
         </PlaysContainer>
         <ExpectedNextWordContainer>
             <ExpectedWord theme={ThemeContextType}>La palabra era:
-                <span>PERRO</span>
+                <span>{currentWord}</span>
             </ExpectedWord>
             <NextWordContainer>
                 <NextWord theme={ThemeContextType}>SIGUIENTE PALABRA</NextWord>
-                <RemainingTime theme={ThemeContextType}>04:10</RemainingTime>
+                <RemainingTime theme={ThemeContextType}>
+                    {
+                        remainingTime
+                    }
+                </RemainingTime>
             </NextWordContainer>
         </ExpectedNextWordContainer>
 

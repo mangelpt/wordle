@@ -9,7 +9,7 @@ export const Container = styled.div`
   gap: 11px;
 `;
 
-export const Cells = styled.div`
+export const EmptyCells = styled.div`
   height: 50px;
   width: 50px;
   border-radius: 5px;
@@ -17,7 +17,7 @@ export const Cells = styled.div`
   text-transform: uppercase;
 `;
 
-export const Column = styled.div`
+export const Row = styled.div`
   width: 100%;
   height: fit-content;
   display: flex;

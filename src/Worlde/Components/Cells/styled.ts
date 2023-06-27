@@ -11,12 +11,13 @@ export const Container = styled.div<CardProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--black);
+  color: var(--white);
   text-align: center;
   font-size: 35px;
   font-family: Roboto;
   font-weight: 800;
-  background-color: var(--white);
+  background-color:rgba(147, 155, 159, 0.30);
+  background-color: ${({theme}) => theme === "dark" && "var(----background2)"};
   background-color: ${({correct}) => correct && "var(--green)"};
   background-color: ${({incorrect}) => incorrect && "var(--orange)"};
   background-color: ${({empty}) => empty && "var(--gray)"};

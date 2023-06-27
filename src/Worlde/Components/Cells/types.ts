@@ -3,4 +3,5 @@ export  interface CardProps{
     incorrect?:boolean;
     empty?:boolean;
     border?:boolean
+    theme?:string
 }

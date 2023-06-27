@@ -94,3 +94,29 @@ export const Button = styled.button`
     background-color: forestgreen;
   }
 `;
+export const Cells = styled.div<{
+    correct?:boolean;
+    incorrect?:boolean;
+    empty?:boolean;
+    border?:boolean
+}>`
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  text-rendering: optimizeLegibility;
+  border: ${({border}) => border ? "1px solid var(--black)" : "none"};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--black);
+  text-align: center;
+  font-size: 35px;
+  font-family: Roboto;
+  font-weight: 800;
+  background-color: var(--white);
+  background-color: ${({correct}) => correct && "var(--green)"};
+  background-color: ${({incorrect}) => incorrect && "var(--orange)"};
+  background-color: ${({empty}) => empty && "var(--gray)"};
+  text-transform: ${({correct}) => correct && "uppercase"};
+`

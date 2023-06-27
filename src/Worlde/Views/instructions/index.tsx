@@ -5,9 +5,10 @@ import {
     Title,
     WordCardContainer,
     Wording,
-    WordingContainer
+    WordingContainer,
+    Cells
 } from "./styled.ts";
-import {WordsCard} from "../../Components/wordsCard";
+
 import React, {useContext} from "react";
 import {UserPreferencesContext} from "../../context/userPreferencesContext.ts";
 
@@ -40,31 +41,31 @@ export const Instructions = ({handleShowModal}: InstructionsProps) => {
             Ejemplos
         </Wording>
         <WordCardContainer>
-            <WordsCard border={true} correct={true}>G</WordsCard>
-            <WordsCard border={true}>A</WordsCard>
-            <WordsCard border={true}>T</WordsCard>
-            <WordsCard border={true}>O</WordsCard>
-            <WordsCard border={true}>S</WordsCard>
+            <Cells border={true} correct={true}>G</Cells>
+            <Cells border={true}>A</Cells>
+            <Cells border={true}>T</Cells>
+            <Cells border={true}>O</Cells>
+            <Cells border={true}>S</Cells>
         </WordCardContainer>
         <Wording theme={ThemeContextType}>
             La letra <b>G</b> está en la palabra y en la posición correcta.
         </Wording>
         <WordCardContainer>
-            <WordsCard border={true}>V</WordsCard>
-            <WordsCard border={true}>O</WordsCard>
-            <WordsCard incorrect={true}>C</WordsCard>
-            <WordsCard border={true}>A</WordsCard>
-            <WordsCard border={true}>L</WordsCard>
+            <Cells border={true}>V</Cells>
+            <Cells border={true}>O</Cells>
+            <Cells incorrect={true}>C</Cells>
+            <Cells border={true}>A</Cells>
+            <Cells border={true}>L</Cells>
         </WordCardContainer>
         <Wording theme={ThemeContextType}>
             La letra <b>C</b> está en la palabra pero en la posición incorrecta.
         </Wording>
         <WordCardContainer>
-            <WordsCard border={true}>C</WordsCard>
-            <WordsCard border={true}>A</WordsCard>
-            <WordsCard border={true}>N</WordsCard>
-            <WordsCard border={true}>T</WordsCard>
-            <WordsCard border={true} empty={true}>O</WordsCard>
+            <Cells border={true}>C</Cells>
+            <Cells border={true}>A</Cells>
+            <Cells border={true}>N</Cells>
+            <Cells border={true}>T</Cells>
+            <Cells border={true} empty={true}>O</Cells>
         </WordCardContainer>
         <Wording theme={ThemeContextType}>
             La letra <b>O</b> no está en la palabra.

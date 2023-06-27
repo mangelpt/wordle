@@ -1,6 +1,6 @@
 import {Container, SwitchContainer, Title, CustomButton, Check, SwitchCustom, ButtonsContainer} from "./styled.ts";
 import {ChartIcon, QuestionIcon} from "../../../assets/Icons/icons.tsx";
-import {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {UserPreferencesContext} from "../../context/userPreferencesContext.ts";
 
 
