@@ -1,10 +1,23 @@
 import {Container, SwitchContainer, Title, CustomButton, Check, SwitchCustom, ButtonsContainer} from "./styled.ts";
 import {ChartIcon, QuestionIcon} from "../../../assets/Icons/icons.tsx";
-import {useState} from "react";
+import {useContext, useEffect, useState} from "react";
+import {UserPreferencesContext} from "../../context/userPreferencesContext.ts";
 
 
 export const Header = () => {
     const [isToggled, setIsToggled] = useState(true);
+    const {ThemeContextType,setUserTheme} = useContext(UserPreferencesContext)
+
+  useEffect(()=>{
+      if (isToggled){
+          setUserTheme("light")
+      }else {
+          setUserTheme("dark")
+      }
+  },[isToggled])
+
+    console.log(ThemeContextType)
+
 
     return <Container>
         <CustomButton>
