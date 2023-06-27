@@ -6,11 +6,12 @@ import {UserPreferencesContext} from "../../context/userPreferencesContext.ts";
 
 interface headerProps {
     handleModal: React.Dispatch<React.SetStateAction<boolean>>
+    handleModalStats: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const Header = ({handleModal}: headerProps) => {
+export const Header = ({handleModal, handleModalStats}: headerProps) => {
     const [isToggled, setIsToggled] = useState(true);
-    const {ThemeContextType, setUserTheme} = useContext(UserPreferencesContext)
+    const {setUserTheme,ThemeContextType} = useContext(UserPreferencesContext)
 
     useEffect(() => {
         if (isToggled) {
@@ -20,18 +21,18 @@ export const Header = ({handleModal}: headerProps) => {
         }
     }, [isToggled])
 
-    console.log(ThemeContextType)
 
     const onclickHandler = () => {
         handleModal(true)
     }
-    return <Container>
+
+    return <Container theme={ThemeContextType}>
         <CustomButton onClick={onclickHandler}>
             <QuestionIcon/>
         </CustomButton>
-        <Title>WORDLE</Title>
+        <Title theme={ThemeContextType}>WORDLE</Title>
         <ButtonsContainer>
-            <CustomButton>
+            <CustomButton onClick={() => handleModalStats(true)}>
                 <ChartIcon/>
             </CustomButton>
             <SwitchContainer>

@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div <{ theme: "light" | "dark" }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 15px;
-  background: var(--background1);
+  background-color: var(--background1);
+  background-color: ${({theme}) => theme==="dark" && "rgba(218, 220, 224, 0.03)"};
   padding: 0 10px;
 `;
 
@@ -13,14 +14,15 @@ export const CustomButton = styled.button`
   height: fit-content;
   border: none;
   background-color: transparent;
-
+  
   &:hover {
     background-color: var(--gray);
   }
 `;
 
-export const Title = styled.span`
+export const Title = styled.span <{ theme: "light" | "dark" }>`
   color: #202537;
+  color: ${({theme}) => theme === "dark" && "var(--white)"};
   text-align: center;
   font-size: 40px;
   font-family: Roboto;

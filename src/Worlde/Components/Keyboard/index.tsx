@@ -1,7 +1,10 @@
-import  {useEffect} from "react";
+import {useContext, useEffect} from "react";
 import {ButtonCustom, Container} from "./styled.ts";
+import {UserPreferencesContext} from "../../context/userPreferencesContext.ts";
 
 export const Keyboard = () => {
+    const {ThemeContextType} = useContext(UserPreferencesContext)
+
     const keys: string[] = [
         'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
         'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
@@ -24,7 +27,7 @@ export const Keyboard = () => {
     };
 
     return (
-        <Container>
+        <Container theme={ThemeContextType}>
             {keys.map((key) => (
                 <ButtonCustom tabIndex={0} key={key} onClick={() => handleKeyDown(key)}>
                     {key}

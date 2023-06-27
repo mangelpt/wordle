@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div <{ theme: "light" | "dark" }>`
   width: 540px;
   height: 190px;
   border-radius: 15px;
-  background: rgba(218, 220, 224, 0.30);
+  background-color: rgba(218, 220, 224, 0.30);
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin: auto;
-
+  background-color: ${({theme}) => theme==="dark" && "rgba(218, 220, 224, 0.03)"};
 `;
 
 export const ButtonCustom = styled.button`

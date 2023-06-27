@@ -4,9 +4,10 @@ interface Props {
     uppercase?: boolean
     bold?: boolean
     fontSize?: string
+    theme?: "light" | "dark"
 }
 
-export const Container = styled.div`
+export const Container = styled.div<{ theme: "light" | "dark" }>`
   width: 546px;
   height: 880px;
   background-color: var(--background1);
@@ -19,10 +20,12 @@ export const Container = styled.div`
   top: 10px;
   left: calc(40% - 180px);
   bottom: 70px;
+  background-color: ${({theme}) => theme==="dark" && "#262B3C"};
 `;
 
 export const Wording = styled.span<Props>`
   color: var(--black);
+  color: ${({theme}) => theme==="dark" && "var(--white)"};
   text-align: center;
   font-size: 19px;
   font-family: Roboto;
@@ -59,6 +62,7 @@ export const Title = styled.span`
   justify-content: center;
   margin-right: 40px;
   padding-top: 30px;
+  color: ${({theme}) => theme==="dark" && "var(--white)"};
 `;
 
 export const WordingContainer = styled.div`
@@ -82,6 +86,10 @@ export const Button = styled.button`
  outline: none;
   border: none;
   color: var(--white);
+  text-align: center;
+  font-size: 28px;
+  font-family: Roboto;
+  font-weight: 800;
   &:hover{
     background-color: forestgreen;
   }
