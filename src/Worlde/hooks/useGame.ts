@@ -1,5 +1,12 @@
-export const useGame = () =>{
+import {UseTimer} from "./useTimer.ts";
+
+export const useGame = () => {
+    const {remainingTime, startTimer, onClickReset} = UseTimer();
 
 
-    return
+    return {
+        remainingTime,
+        startTimer,
+        onClickReset
+    }
 }

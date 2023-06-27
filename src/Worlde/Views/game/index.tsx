@@ -8,6 +8,7 @@ import {Instructions} from "../instructions";
 import {Stats} from "../stats";
 import {UserPreferencesContext} from "../../context/userPreferencesContext.ts";
 
+
 export const Game = () => {
     let userFirstTime: boolean;
     if (localStorage.getItem("isUserFirstLogin") === null) {
@@ -17,7 +18,9 @@ export const Game = () => {
     }
     const [showModalInstructions, setModalInstructions] = useState(userFirstTime);
     const [showModalStats, setModalStats] = useState(false);
-   const {ThemeContextType} = useContext(UserPreferencesContext)
+    const {ThemeContextType} = useContext(UserPreferencesContext)
+
+
 
     return (<Container theme={ThemeContextType}>
         <GameContainer>
