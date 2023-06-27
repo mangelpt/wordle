@@ -9,7 +9,17 @@ import {
 } from "./styled.ts";
 import {WordsCard} from "../../Components/wordsCard";
 
-export const Instructions = () => {
+interface InstructionsProps {
+    handleShowModal: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export const Instructions = ({handleShowModal}: InstructionsProps) => {
+
+    const onClickHandler = () => {
+        handleShowModal(false);
+        localStorage.setItem("isUserFirstLogin", "false")
+    }
+
     return (<Container>
         <Title>Cómo jugar</Title>
         <DescriptionContainer>
@@ -68,7 +78,7 @@ export const Instructions = () => {
                 ¡Una palabra nueva cada 5 minutos!
             </Wording>
         </WordingContainer>
-        <Button>!JUGAR¡</Button>
+        <Button onClick={onClickHandler}>!JUGAR¡</Button>
     </Container>)
 }
 

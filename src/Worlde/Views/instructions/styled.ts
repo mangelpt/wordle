@@ -8,12 +8,17 @@ interface Props {
 
 export const Container = styled.div`
   width: 546px;
-  height: 900px;
+  height: 880px;
   background-color: var(--background1);
   margin: 20px auto;
   border: 1px solid var(--gray);
   border-radius: 4px;
   padding-left: 42px;
+  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+  position:  absolute;
+  top: 10px;
+  left: calc(40% - 180px);
+  bottom: 70px;
 `;
 
 export const Wording = styled.span<Props>`

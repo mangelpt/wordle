@@ -4,23 +4,29 @@ import {useContext, useEffect, useState} from "react";
 import {UserPreferencesContext} from "../../context/userPreferencesContext.ts";
 
 
-export const Header = () => {
-    const [isToggled, setIsToggled] = useState(true);
-    const {ThemeContextType,setUserTheme} = useContext(UserPreferencesContext)
+interface headerProps {
+    handleModal: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-  useEffect(()=>{
-      if (isToggled){
-          setUserTheme("light")
-      }else {
-          setUserTheme("dark")
-      }
-  },[isToggled])
+export const Header = ({handleModal}: headerProps) => {
+    const [isToggled, setIsToggled] = useState(true);
+    const {ThemeContextType, setUserTheme} = useContext(UserPreferencesContext)
+
+    useEffect(() => {
+        if (isToggled) {
+            setUserTheme("light")
+        } else {
+            setUserTheme("dark")
+        }
+    }, [isToggled])
 
     console.log(ThemeContextType)
 
-
+    const onclickHandler = () => {
+        handleModal(true)
+    }
     return <Container>
-        <CustomButton>
+        <CustomButton onClick={onclickHandler}>
             <QuestionIcon/>
         </CustomButton>
         <Title>WORDLE</Title>
