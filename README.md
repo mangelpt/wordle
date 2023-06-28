@@ -1,2 +1,2 @@
 # wordle
-## deploy in netlify [here](https://649be28401080446bd2bd9a9--merry-banoffee-e89c85.netlify.app/)
+## deploy in netlify [here](https://649be56189bec646b180e2f6--monumental-lolly-8a9d19.netlify.app/)
