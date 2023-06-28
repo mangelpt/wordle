@@ -1,25 +1,36 @@
-import {Container} from "./styled.ts";
-import {useContext} from "react";
-import {CardProps} from "./types.ts";
-import {LetterContext} from "../../context/LetterContext.ts";
-import {UserPreferencesContext} from "../../context/userPreferencesContext.ts";
+import { Container } from "./styled.ts";
+import { useContext } from "react";
+import { LetterContext } from "../../context/LetterContext.ts";
+import { UserPreferencesContext } from "../../context/userPreferencesContext.ts";
 
-interface Props extends CardProps {
-    position?: number;
-    attempt?: number;
+interface Props {
+  position?: number;
+  attempt?: number;
+  correctWord: string;
 }
 
-export const BoardCells = ({correct, incorrect, empty, border, attempt, position}: Props) => {
-    const {ThemeContextType} = useContext(UserPreferencesContext)
-    const {board} = useContext(LetterContext);
-    const letter = board[attempt!][position!]
+export const Cells = ({ attempt, position, correctWord }: Props) => {
+  const { ThemeContextType } = useContext(UserPreferencesContext);
+  const { board, currentAttempt } = useContext(LetterContext);
+  const letter = board[attempt!][position!];
 
-    return <Container
-        theme={ThemeContextType}
-        border={border}
-        correct={correct}
-        empty={empty}
-        incorrect={incorrect}>
-        {letter}
+  const correct: boolean = correctWord[position!] === letter;
+  const incorrect: boolean =
+    !correct && letter !== "" && correctWord.includes(letter);
+  const empty: boolean =
+    currentAttempt.attempt > attempt! && (!correct || !incorrect)
+      ? true
+      : false;
+
+  return (
+    <Container
+      theme={ThemeContextType}
+      border={false}
+      correct={correct}
+      empty={empty}
+      incorrect={incorrect}
+    >
+      {letter}
     </Container>
-}
+  );
+};

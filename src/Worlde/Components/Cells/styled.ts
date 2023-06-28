@@ -16,7 +16,7 @@ export const Container = styled.div<CardProps>`
   font-size: 35px;
   font-family: Roboto;
   font-weight: 800;
-  background-color:rgba(147, 155, 159, 0.30);
+  background-color:#939B9F;;
   background-color: ${({theme}) => theme === "dark" && "var(----background2)"};
   background-color: ${({correct}) => correct && "var(--green)"};
   background-color: ${({incorrect}) => incorrect && "var(--orange)"};

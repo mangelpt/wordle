@@ -4,12 +4,20 @@ import { useContext } from "react";
 
 export const useGame = () => {
   const { remainingTime, startTimer, onClickReset, currentWord } = UseTimer();
-  const { board, setBoard } = useContext(LetterContext);
+  const {
+    onEnter,
+    onSelect,
+    onDelete,
+  } = useContext(LetterContext);
 
-  const selectNewLetter = (keyValue: string) => {
-    const newBoard = [...board];
-    newBoard[0][0] = keyValue;
-    setBoard(newBoard);
+  const selectNewLetter = (keyValue: string , currentWord:string) => {
+    if (keyValue === "ENTER") {
+      onEnter(currentWord);
+    } else if (keyValue === "⬅") {
+      onDelete();
+    } else {
+      onSelect(keyValue);
+    }
   };
 
   return {
@@ -17,6 +25,6 @@ export const useGame = () => {
     startTimer,
     onClickReset,
     currentWord,
-    selectNewLetter
+    selectNewLetter,
   };
 };

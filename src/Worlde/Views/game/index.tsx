@@ -8,6 +8,7 @@ import { Instructions } from "../instructions";
 import { Stats } from "../stats";
 import { UserPreferencesContext } from "../../context/userPreferencesContext.ts";
 import { useGame } from "../../hooks/useGame.ts";
+import { LetterContext } from "../../context/LetterContext.ts";
 
 export const Game = () => {
   let userFirstTime: boolean;
@@ -19,9 +20,8 @@ export const Game = () => {
   const [showModalInstructions, setModalInstructions] = useState(userFirstTime);
   const [showModalStats, setModalStats] = useState(false);
   const { ThemeContextType } = useContext(UserPreferencesContext);
-  const { remainingTime, currentWord,selectNewLetter } = useGame();
-
-  console.log("remainingTime", remainingTime);
+  const { remainingTime, currentWord, selectNewLetter } = useGame();
+  const { currentAttempt,gameStats  } = useContext(LetterContext);
 
   return (
     <Container theme={ThemeContextType}>
@@ -30,10 +30,10 @@ export const Game = () => {
           handleModal={setModalInstructions}
           handleModalStats={setModalStats}
         />
-        <Grid />
-        <Keyboard  selectNewLetter={selectNewLetter}/>
+        <Grid currentWord={currentWord} />
+        <Keyboard selectNewLetter={selectNewLetter}  currentWord={currentWord}/>
       </GameContainer>
-      {showModalStats &&
+      {(showModalStats || currentAttempt.attempt === 5 || gameStats.wins !== 0) &&
         createPortal(
           <Stats
             handleShowModalStats={setModalStats}
@@ -42,6 +42,7 @@ export const Game = () => {
           />,
           document.body
         )}
+
       {(showModalInstructions || userFirstTime) &&
         createPortal(
           <Instructions handleShowModal={setModalInstructions} />,
