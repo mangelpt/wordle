@@ -3,7 +3,7 @@ import {VALID_GUESSES} from "../data/data.ts";
 import {useNavigate} from "react-router-dom";
 
 export const UseTimer = () => {
-    const Ref = useRef<number | null>(null);
+    const Ref = useRef<any | null>(null);
     const [timer, setTimer] = useState('00:00:00');
     const [currentWord, setCurrentWord] = useState('');
     const navigate = useNavigate();
