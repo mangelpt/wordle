@@ -16,7 +16,6 @@ import {
 import React, { useContext } from "react";
 import { UserPreferencesContext } from "../../context/userPreferencesContext.ts";
 import { LetterContext } from "../../context/LetterContext.ts";
-import {useNavigate} from "react-router-dom";
 
 interface InstructionsProps {
   handleShowModalStats: React.Dispatch<React.SetStateAction<boolean>>;
@@ -32,7 +31,7 @@ export const Stats = ({
   const { ThemeContextType } = useContext(UserPreferencesContext);
   const { currentAttempt, setCurrentAttempt, gameStats, setGameStats } =
     useContext(LetterContext);
-  const navigate = useNavigate();
+
 
   const handleOnClick = () => {
     if (currentAttempt.attempt === 5) {
@@ -40,7 +39,7 @@ export const Stats = ({
         attempt: currentAttempt.attempt - 1,
         letterPosition: currentAttempt.letterPosition,
       });
-      navigate(0)
+ 
     }
     if (gameStats.wins !== 0) {
       setGameStats({ wins: 0, gameNUmber: 0 });
