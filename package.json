@@ -2,7 +2,6 @@
   "name": "worlde",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://mangelpt.github.io/wordle",
   "type": "module",
   "scripts": {
     "predeploy": "yarn run build",
